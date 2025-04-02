@@ -14,9 +14,9 @@ function changeImage() {
     progressBars.forEach(bar => bar.classList.remove("active"));
     progressBars[index].classList.add("active");
 
-    
-    slides.forEach(slide => slide.style.display = "none");
-    slides[index].style.display = "block";
+
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
 }
 
 const myinterval = setInterval(changeImage, 3000);
@@ -27,22 +27,33 @@ progressBars[index].classList.add("active");
 // =================================== Currentslide show and stop automatic caroussel=============================================//
 
 function currentSlide(i) {
-    
+
     // Stop automatic mode
     clearInterval(myinterval);
-    
+
     progressBars.forEach(bar => bar.classList.remove("active"));
     progressBars.forEach(bar => bar.classList.remove("active__after_clicked"));
-    
+
     slides.forEach(slide => slide.style.display = "none");
     index = i;
     progressBars[index].classList.add("active__after_clicked");
     slides[index].style.display = "block";
 
 }
-// =======================================                       =============================================//
-function toggleMenu() {
-    const navLinks = document.querySelector(".nav__links");
+// =======================================  Activate and desactivate drop-down menu  ==========================================//
+
+const navLinks = document.querySelector(".nav__links");
+const menuBtn = document.getElementById("menu__icon");
+// const menuBtnClose = document.getElementById("menu__icon-close");
+menuBtn.addEventListener("click", function() {
     navLinks.classList.toggle("active");
-    console.log("test");
+    menuBtn.innerHTML = navLinks.classList.contains("active") ? "✖" : "☰";
 }
+)
+
+document.addEventListener("click", function (event) {
+    if (!navLinks.contains(event.target) && !menuBtn.contains(event.target)) {
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+    }
+})

@@ -14,30 +14,26 @@
     <script src="JS/main.js" defer></script>
 </head>
 <body>
-<section class="promotion">
+<header class="promotion">
     <p>Livraison oferte à Yaoundé dès 25.000 FCFA d'achat ✨</p>
-</section>
+</header>
 <!----========================================== Section Navigation Bar ============================================---->
-<section>
-    <nav class="container nav__container">
-        <a class="nav__logo" href="">
-            <!-- <img src="assets/logo.png" alt="Logo Shany Shop" class="nav__logo--img"> -->
-             SHANY
-        </a>
-        <ul class="nav__links">
-            <li class="nav__item"><a href="#" class="nav__link">Accueil</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">À Propos</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Produits</a></li>
-            <li class="nav__item-contact"><a href="#" class="contact__link">CONTACT</a></li>
-            
-        </ul> 
-        <button   id="menu__icon" onclick="toggleMenu()"><i class="uil uil-bars"></i></button>
-        
-    </nav>
-</section>
+<nav class="nav__container">
+    <a class="nav__logo" href="index.html">
+         <!-- <img src="assets/logo.png" alt="Logo Shany Shop" class="nav__logo--img"> -->
+            SHANY
+    </a>
+    <ul class="nav__links">
+        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">À Propos</a></li>
+        <li class="nav__item"><a href="#caterogies" class="nav__link">Produits</a></li>
+        <li class="nav__item-contact"><a href="#" class="contact__link">CONTACT</a></li>
+    </ul> 
+    <button id="menu__icon">☰</button>  
+</nav>
 <section class="caroussel">
-    <div class="container caroussel__container">
-            <img class="caroussel__image"  src="images/1.jpg">
+    <div class="caroussel__container">
+            <img class="caroussel__image active"  src="images/1.jpg">
             <img class="caroussel__image"  src="images/2.jpg">
             <img class="caroussel__image"  src="images/4.png">
     </div>
@@ -46,10 +42,40 @@
         <div class="progress-bar" onclick="currentSlide(1)"></div>
         <div class="progress-bar" onclick="currentSlide(2)"></div>
     </div>
-    <div class="call__to-action">Je decouvre</div>
+    <a class="call__to-action" href="">DÉCOUVRIR</a>
 </section>
-<section>
-    
+<section ID="about">
+    <div class="container about__container">
+        <article class="about__text">
+            <h3>Élégance raffinée</h3>
+            <h2>Inspirée par Hawaii</h2>
+            <h4>Découvrez des créations uniques qui allient tradition et modernité.</h4>
+            <a class=" " href="">En savoir plus</a>
+        </article>
+        <img class="about__image"  src="images/about.webp">
+    </div>
+</section>
+<section ID="caterogies">
+    <h3>Découvrez notre collection exclusive</h3>
+    <h2>Révélez votre style unique</h2>
+    <div class="categories__container container">
+        <a href="" class="categories__item">
+            <img src="images/cat1.jpg" class="categories__image">
+            <h2 class="categories_name">Colliers</h2>
+        </a>
+        <a href="" class="categories__item">
+            <img src="images/cat1.jpg" class="categories__image">
+            <h2 class="categories_name">Bracelets</h2>
+        </a>
+        <a href="" class="categories__item">
+            <img src="images/cat1.jpg" class="categories__image">
+            <h2 class="categories_name">Boucles d'oreilles</h2>
+        </a>
+        <a href="" class="categories__item">
+            <img src="images/cat1.jpg" class="categories__image">
+            <h2 class="categories_name">Autres</h2>
+        </a>
+    </div>
 </section>
 </body>
 </html>
