@@ -3,100 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Responsive</title>
+    <title>Tooltip en CSS</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            font-size: 16px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #333;
-            padding: 15px 20px;
-            color: white;
-        }
-
-        .navbar .logo {
-            font-size: 24px;
+        .tooltip {
+            position: relative;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
             font-weight: bold;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
+        .tooltip::after {
+            content: "Cliquez ici pour plus d'infos!";
+            position: absolute;
+            left: 50%;
+            bottom: -30px;
+            transform: translateX(-50%);
+            background: #333;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            padding: 8px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
         }
 
-        .menu-icon {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: #333;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                padding: 15px 0;
-            }
-
-            .menu-icon {
-                display: block;
-            }
+        .tooltip:hover::after {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Mon Site</div>
-        <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">À Propos</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    </nav>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <a href="#" class="tooltip">Survolez-moi</a>
 
 </body>
 </html>
