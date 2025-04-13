@@ -12,13 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Shany Shop</title>
     <script src="JS/main.js" defer></script>
+    <script src="JS/script.js" defer></script>
 </head>
 <body>
     <!----========================================== first Section - promo/NAV/Caroussel ============================================---->
 <section class="first">
-    <!--- Promotion text -->
+    <!------------------------------------------------------------ Promotion text -------------------------------------------------------------->
     <div class="promotion">Livraison offerte à Yaoundé dès 25.000 FCFA d'achat ✨</div>
-    <!--- Navigation Bar -->
+    <!------------------------------------------------------------ Navigation Bar --------------------------------------------------------- -->
     <nav class="nav__container">
         <a class="nav__logo" href="index.html">
             <!-- <img src="assets/logo.png" alt="Logo Shany Shop" class="nav__logo--img"> -->
@@ -31,7 +32,88 @@
             <li class="nav__item"><a href="#accessoires" class="nav__link">Accessoires</a></li>
         </ul>
         <button id="menu__icon">☰</button>
-        <button id="cart__icon"><i class="uil uil-shopping-basket"></i></button>
+        <div class="open__cart">
+            <button class="active" id="cart__icon"><i class="uil uil-shopping-bag"></i></button>
+            <button ID="cart__qty">0</button>
+        </div>
+        <div ID="cartCont" class="cart__container">
+            <button id="close__icon">x</button>
+            <div class="cit">
+                <div ID="cp-items" class="cart__product-items">
+                    <div class="cart__product-item" data-id="1">
+                        <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                        <div class="cart__right">
+                            <div class="cart_description">
+                                <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                                <p class="cart__pr__price">15.000 FCFA</p>
+                            </div>
+                            <div class="quantity">
+                                <button ID="minus">-</button>
+                                <button ID="qty">1</button>
+                                <button ID="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__product-item" data-id="2">
+                        <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                        <div class="cart__right">
+                            <div class="cart_description">
+                                <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                                <p class="cart__pr__price">15.000 FCFA</p>
+                            </div>
+                            <div class="quantity">
+                                <button ID="minus">-</button>
+                                <button ID="qty">1</button>
+                                <button ID="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__product-item" data-id="3">
+                        <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                        <div class="cart__right">
+                            <div class="cart_description">
+                                <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                                <p class="cart__pr__price">15.000 FCFA</p>
+                            </div>
+                            <div class="quantity">
+                                <button ID="minus">-</button>
+                                <button ID="qty">1</button>
+                                <button ID="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__product-item" data-id="4">
+                        <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                        <div class="cart__right">
+                            <div class="cart_description">
+                                <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                                <p class="cart__pr__price">15.000 FCFA</p>
+                            </div>
+                            <div class="quantity">
+                                <button ID="minus">-</button>
+                                <button ID="qty">1</button>
+                                <button ID="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__product-item" data-id="5">
+                        <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                        <div class="cart__right">
+                            <div class="cart_description">
+                                <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                                <p class="cart__pr__price">15.000 FCFA</p>
+                            </div>
+                            <div class="quantity">
+                                <button ID="minus">-</button>
+                                <button ID="qty">1</button>
+                                <button ID="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="commander">Commander via <i class="uil uil-whatsapp"></i> Whatsapp</button>
+                </div>
+            </div>
+        </div>
     </nav>
     <!--- Caroussel Images  -->
     <div class="caroussel">
@@ -50,11 +132,13 @@
 </section>
 <!----==========================================  New Products Section ============================================---->
 <section class="new__products">
-    <h2>Nos Nouveautés</h2>
+    <div class="np__title">
+        <h2>Nos Nouveautés</h2>
+    </div>
     <div class="new__products-container">
         <div class="new__product-item icon_wrapper">
             <a class="pr_link" href=""><img src="images/1.jpg" class="pr_image"></a>
-            <div class="icon-overlay"><i class="uil uil-heart"></i></div>
+            <!-- <div class="icon-overlay"><i class="uil uil-heart"></i></div> -->
             <p class="pr__title">Collier en argent</p>
             <p class="pr__price">15.000 FCFA</p>
         </div>
@@ -131,10 +215,10 @@
     <h2>Découvrez notre collection exclusive</h2>
     <!-- <p><strong>Révélez votre style unique</strong></p> -->
     <div class="categories__container">
-        <button onclick="currentCat(0)" class="categories__item">Colliers</button>
-        <button onclick="currentCat(1)" class="categories__item">Bracelets</button>
-        <button onclick="currentCat(2)" class="categories__item">Boucles d'oreilles</button>
-        <button onclick="currentCat(3)" class="categories__item">Accessoires</button>
+            <button onclick="currentCat(0)" class="categories__item">Colliers</button>
+            <button onclick="currentCat(1)" class="categories__item">Bracelets</button>
+            <button onclick="currentCat(2)" class="categories__item">Boucles d'oreilles</button>
+            <button onclick="currentCat(3)" class="categories__item">Accessoires</button>
         <div ID="pbc" class="progress-bar__cat"></div>
     </div>
     <div class="product-container" id="productContainer"></div>

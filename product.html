@@ -10,30 +10,213 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Products Page</title>
-    <script src="JS/main.js" defer></script>
+    <title>Shany Shop</title>
+    <script src="JS/script.js" defer></script>
 </head>
 <body>
-<header class="promotion">
-    <p>Livraison oferte à Yaoundé dès 25.000 FCFA d'achat ✨</p>
-</header>
-<!----========================================== Section Navigation Bar ============================================---->
-<nav class="nav__container">
-    <a class="nav__logo" href="index.html">
-         <!-- <img src="assets/logo.png" alt="Logo Shany Shop" class="nav__logo--img"> -->
-            SHANY
-    </a>
-    <ul class="nav__links">
-        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">À Propos</a></li>
-        <li class="nav__item"><a href="#caterogies" class="nav__link">Nos Bijoux</a></li>
-        <li class="nav__item-contact"><a href="#" class="contact__link">CONTACT</a></li>
-    </ul>
-    <button id="menu__icon">☰</button>
-</nav>
-<!----========================================== Category Bar ============================================---->
-<div class="categories__bar">
-    <button ID="cat__item" class="cat1">Colliers</button>
-    <button ID="cat__item" class="cat2">Bracelets</button>
-    <button ID="cat__item" class="cat3">Boucles d'oreilles</button>
-</div>
+<!----========================================== first Section - promo/NAV/Caroussel ============================================---->
+<section class="first">
+  <!------------------------------------------------------------ Promotion text -------------------------------------------------------------->
+  <div class="promotion">Livraison offerte à Yaoundé dès 25.000 FCFA d'achat ✨</div>
+  <!------------------------------------------------------------ Navigation Bar --------------------------------------------------------- -->
+  <nav class="nav__container">
+      <a class="nav__logo" href="index.html">
+          <!-- <img src="assets/logo.png" alt="Logo Shany Shop" class="nav__logo--img"> -->
+              SHANY
+      </a>
+      <ul class="nav__links">
+          <li class="nav__item"><a href="#colliers" class="nav__link">Colliers</a></li>
+          <li class="nav__item"><a href="#boucles" class="nav__link">Boucles d'oreilles</a></li>
+          <li class="nav__item"><a href="#bracelets" class="nav__link">Bracelets</a></li>
+          <li class="nav__item"><a href="#accessoires" class="nav__link">Accessoires</a></li>
+      </ul>
+      <button id="menu__icon">☰</button>
+      <div class="open__cart">
+          <button class="active" id="cart__icon"><i class="uil uil-shopping-bag"></i></button>
+          <button ID="cart__qty">0</button>
+      </div>
+      <div ID="cartCont" class="cart__container">
+          <button id="close__icon">✖</button>
+          <div class="cit">
+              <div ID="cp-items" class="cart__product-items">
+                  <div class="cart__product-item" data-id="1">
+                      <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                      <div class="cart__right">
+                          <div class="cart_description">
+                              <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                              <p class="cart__pr__price">15.000 FCFA</p>
+                          </div>
+                          <div class="quantity">
+                              <button ID="minus">-</button>
+                              <button ID="qty">1</button>
+                              <button ID="plus">+</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cart__product-item" data-id="2">
+                      <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                      <div class="cart__right">
+                          <div class="cart_description">
+                              <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                              <p class="cart__pr__price">15.000 FCFA</p>
+                          </div>
+                          <div class="quantity">
+                              <button ID="minus">-</button>
+                              <button ID="qty">1</button>
+                              <button ID="plus">+</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cart__product-item" data-id="3">
+                      <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                      <div class="cart__right">
+                          <div class="cart_description">
+                              <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                              <p class="cart__pr__price">15.000 FCFA</p>
+                          </div>
+                          <div class="quantity">
+                              <button ID="minus">-</button>
+                              <button ID="qty">1</button>
+                              <button ID="plus">+</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cart__product-item" data-id="4">
+                      <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                      <div class="cart__right">
+                          <div class="cart_description">
+                              <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                              <p class="cart__pr__price">15.000 FCFA</p>
+                          </div>
+                          <div class="quantity">
+                              <button ID="minus">-</button>
+                              <button ID="qty">1</button>
+                              <button ID="plus">+</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cart__product-item" data-id="5">
+                      <a class="cart__pr_link" href=""><img src="images/1.jpg"></a>
+                      <div class="cart__right">
+                          <div class="cart_description">
+                              <p class="cart__pr__title"><strong>Collier en argent</strong></p>
+                              <p class="cart__pr__price">15.000 FCFA</p>
+                          </div>
+                          <div class="quantity">
+                              <button ID="minus">-</button>
+                              <button ID="qty">1</button>
+                              <button ID="plus">+</button>
+                          </div>
+                      </div>
+                  </div>
+                  <button id="commander">Commander via <i class="uil uil-whatsapp"></i> Whatsapp</button>
+              </div>
+          </div>
+      </div>
+  </nav>
+</section>
+<!----========================================== Product Info Section ============================================---->  
+<div class="product__container">
+    
+    <!-- Produktdetails -->
+    <div class="product-section">
+      <div class="product-image">
+        <img class="main__prImage" src="images/1.jpg">
+        <div class="thumbnail">
+            <img class="tn__image" src="images/1.jpg">
+            <img class="tn__image" src="images/2.jpg">
+            <img class="tn__image" src="images/3.png">
+            <img class="tn__image" src="images/4.png">
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="first__infos">
+            <h1>Boucles Anais</h1>
+            <h4>5.000 Fcfa</h4>
+        </div>
+        <div class="specific__infos">
+            <ul>
+                <li>Material:</li>
+                <li>Couleur:</li>
+                <li>Taille:</li>
+            </ul>
+        </div>
+        <button class="ajout">Ajouter au panier</button>
+        <div class="bullets">
+            <p class="bullets__start">
+                Dieser elegante Ring aus 925er Silber mit Goldbeschichtung kombiniert zeitlose Eleganz mit modernem Stil.
+                Ideal für besondere Anlässe oder als edles Geschenk. Erhältlich in verschiedenen Größen.
+            </p>
+            <div class="bullets__items">
+                <ul>
+                    <li>Quis magni dolorem facilis temporibus ratione asperiores!</li>
+                    <li>Quis magni dolorem facilis temporibus ratione asperiores!</li>
+                    <li>Quis magni dolorem facilis temporibus ratione asperiores!</li>
+                    <li>Quis magni dolorem facilis temporibus ratione asperiores!</li>
+                </ul>
+            </div>
+            <p class="bullets__end">
+                Dieser elegante Ring aus 925er Silber mit Goldbeschichtung kombiniert zeitlose Eleganz mit modernem Stil.
+                Ideal für besondere Anlässe oder als edles Geschenk. Erhältlich in verschiedenen Größen.
+            </p>
+        </div>
+        
+      </div>
+    </div>
+
+    
+    <!-- Ähnliche Produkte -->
+    <div class="related-products">
+        <h2>Ähnliche Produkte</h2>
+        <div class="related-grid">
+          <div class="related-item">
+            <img src="https://via.placeholder.com/200x150" alt="Produkt 1">
+            <p>Silberring mit Perle</p>
+          </div>
+          <div class="related-item">
+            <img src="https://via.placeholder.com/200x150" alt="Produkt 2">
+            <p>Roségold Armband</p>
+          </div>
+          <div class="related-item">
+            <img src="https://via.placeholder.com/200x150" alt="Produkt 3">
+            <p>Kettenanhänger Herz</p>
+          </div>
+          <div class="related-item">
+            <img src="https://via.placeholder.com/200x150" alt="Produkt 3">
+            <p>Bracelets Elois Herz</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Kommentare -->
+    <div class="comments">
+      <h2>Avis client</h2>
+    </div>
+
+
+  </div>
+<!----========================================== Last Section: Info & footer section ============================================---->
+<section class="info__section">
+  <div class="info_item">
+      <p><i class="uil uil-comment-question"></i></p>
+      <p>Vous avez une question ?</p>
+      <p>Contactez notre service client au numero Whatsapp 01.72.52.38.56 ou par email à contact@shany.com</p>
+  </div>
+  <div class="info_item">
+      <p><i class="uil uil-lock"></i></p>
+      <p>Paiement sécurisé</p>
+      <p>Paiement sécurisé par soit par Orange Money, MTN Mobile Money ou à la livraison</p>
+  </div>
+  <div class="info_item">
+      <p><i class="uil uil-truck"></i></p>
+      <p>Livraison offerte à Yaoundé dès 25.000 FCFA d’achats</p>
+      <p>Pour toute commande en-dessous de 25.000 FCFA ou en dehors de Yaoundé. Les frais de livraison sont supportés par l’acheteur</p>
+  </div>
+</section>
+<footer class="footer">
+<a href="#" alt="see my portfolio">Web design by GabDev</a>
+<p>&copy; 2025 Shany Shop - Tous droits réservés.</p>
+</footer>
+</body>
+</html>
+

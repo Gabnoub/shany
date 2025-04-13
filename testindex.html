@@ -1,43 +1,65 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tooltip en CSS</title>
-    <style>
-        .tooltip {
-            position: relative;
-            text-decoration: none;
-            color: #007bff;
-            font-size: 18px;
-            font-weight: bold;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mengen-Auswahl</title>
+  <style>
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      max-width: 160px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
 
-        .tooltip::after {
-            content: "Cliquez ici pour plus d'infos!";
-            position: absolute;
-            left: 50%;
-            bottom: -30px;
-            transform: translateX(-50%);
-            background: #333;
-            color: white;
-            padding: 8px;
-            border-radius: 5px;
-            white-space: nowrap;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            pointer-events: none;
-        }
+    .quantity-control button {
+      width: 35px;
+      height: 35px;
+      font-size: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-        .tooltip:hover::after {
-            opacity: 1;
-        }
-    </style>
+    .quantity-control input {
+      width: 50px;
+      text-align: center;
+      font-size: 18px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
 
-    <a href="#" class="tooltip">Survolez-moi</a>
+  <form class="quantity-control">
+    <button type="button" class="minus">−</button>
+    <input type="number" value="1" min="0" id="quantity">
+    <button type="button" class="plus">+</button>
+  </form>
+
+  <script>
+    const minusBtn = document.querySelector(".minus");
+    const plusBtn = document.querySelector(".plus");
+    const quantityInput = document.getElementById("quantity");
+
+    minusBtn.addEventListener("click", () => {
+      let value = parseInt(quantityInput.value);
+      if (value > 0) {
+        quantityInput.value = value - 1;
+      }
+    });
+
+    plusBtn.addEventListener("click", () => {
+      let value = parseInt(quantityInput.value);
+      quantityInput.value = value + 1;
+    });
+  </script>
 
 </body>
 </html>
